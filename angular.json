@@ -23,6 +23,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+             "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "devextreme-angular",
+              "devextreme",
+              "@firebase",
+              "@angular/fire",
+              "devexpress-richedit",
+              "x-data-spreadsheet"
+            ],
+            "project": "ng-package.json"
+            ,
+               
             "outputPath": "dist/ProjectCinema",
             "index": "src/index.html",
             "main": "src/main.ts",
