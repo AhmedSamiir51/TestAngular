@@ -1,0 +1,65 @@
+<div id="site-content">
+  <app-nav-bar class="navbar"></app-nav-bar>
+  <main class="main-content">
+    <div class="container">
+      <div class="page">
+        <div class="breadcrumbs">
+          <a routerLink="/home">Home</a>
+          <span>Movie Details</span>
+        </div>
+        <div class="row">
+          <section class="col-sm-4">
+            <div class="poster-container">
+              <img src="https://localhost:44385/{{ data.photoData }}" />
+            </div>
+            <div>
+              <button
+                class="book-btn"
+                mat-button
+                [disabled]="display"
+                (click)="openDialogBooking(data.id)"
+              >
+                Add Booking
+              </button>
+            </div>
+          </section>
+          <section class="col-md-6">
+            <div class="movie-details">
+              <div class="">
+                <div class="latest-movie">
+                  <h2>{{ data.name }}</h2>
+                </div>
+              </div>
+              <div>
+                <div class="latest-movie">
+                  <hr />
+                  <p>
+                    120 mins | Rated PG-13 (for violence and some bloody images,
+                    suggestive material, partial nudity and language. ) | Action
+                    Directed by Adam Nee, Aaron Nee | Starring Oscar Nuñez,
+                    Patti Harrison, Daniel Radcliffe, Brad Pitt, Sandra Bullock,
+                    Channing Tatum
+                  </p>
+                  <hr />
+                  <p>
+                    {{ data.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <iframe
+              [src]="imageUrl"
+              frameborder="0"
+              style="width: 673px !important"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- .container -->
+  </main>
+</div>
+<!-- Default snippet for navigation -->

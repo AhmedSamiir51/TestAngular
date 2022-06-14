@@ -1,0 +1,22 @@
+<div class="container">
+  <h3 mat-dialog-title style="color: red">Are you sure?</h3>
+  <div mat-dialog-content>
+    Hall Name: {{ data.name }}
+    <p></p>
+    Limit: {{ data.limit }}
+    <p></p>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      color="warn"
+      [mat-dialog-close]="1"
+      (click)="confirmDelete()"
+    >
+      Delete
+    </button>
+    <button mat-button color="primary" (click)="onNoClick()" tabindex="-1">
+      Cancel
+    </button>
+  </div>
+</div>

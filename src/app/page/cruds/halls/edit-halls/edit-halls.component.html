@@ -1,0 +1,69 @@
+<div class="container">
+  <h3 mat-dialog-title>Edit Halls</h3>
+
+  <form
+    class="mat-dialog-content"
+    (ngSubmit)="stopEdit()"
+    #formControl="ngForm"
+  >
+    <div class="form" style="display: none !important">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          #input
+          class="form-control"
+          placeholder="Id"
+          [(ngModel)]="data.id"
+          name="Client_Id"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          #input
+          class="form-control"
+          placeholder="Hall Name"
+          [(ngModel)]="data.name"
+          name="name"
+          required
+        />
+        <mat-error *ngIf="formControl.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          #inputstate
+          type="number"
+          class="form-control"
+          placeholder="limit"
+          [(ngModel)]="data.limit"
+          name="limit"
+          required
+        />
+        <mat-error *ngIf="formControl.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button
+        mat-button
+        type="submit"
+        [disabled]="!formControl.valid"
+        [mat-dialog-close]="1"
+      >
+        Save
+      </button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
